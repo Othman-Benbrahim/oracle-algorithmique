@@ -1,10 +1,10 @@
-Jeu de cartes sous forme d'oracle. 
+# Jeu de cartes sous forme d'oracle. 
 
 Le Système Fractales du Destin (FdD) est une application web interactive qui fonctionne comme un oracle algorithmique à usage décisionnel et psychologique. Inspirée de la méthode Prunckun — framework d'analyse du renseignement —, l'application combine un jeu de cartes symbolique avec de l'intelligence artificielle générative pour produire des analyses situationnelles personnalisées.
 
 L'utilisateur décrit une situation, sélectionne un mode d'analyse, et l'oracle tire une carte depuis un deck de 59 cartes structurées. Une IA sélectionne la carte la plus pertinente parmi le deck complet, puis génère un diagnostic, des scénarios probabilistes et une recommandation tactique adaptée.
 
-1.1 Fiche d'identité
+## 1.1 Fiche d'identité
 
 Nom du projet	Système Fractales du Destin (Oracle FdD)
 
@@ -22,9 +22,9 @@ Langage front-end	HTML5, CSS3, JavaScript (Vanilla)
 
 Format de données	JSON (échanges IA), MySQL (persistance deck)
 
-2. Architecture technique
+# 2. Architecture technique
    
-2.1 Structure des fichiers
+## 2.1 Structure des fichiers
 
 Fichier	Description
 index.php	Interface utilisateur principale. Gère l'affichage, les modes, l'animation des cartes, l'historique local et les appels AJAX vers oracle.php.
@@ -35,7 +35,7 @@ db.php	Fichier de configuration de la connexion à la base de données MySQL via
 
 if0_40842600_jeu_cartes.sql	Dump SQL complet du deck de 59 cartes. Contient la structure de la table fdd_deck et toutes les données d'initialisation.
 
-2.2 Flux de traitement
+## 2.2 Flux de traitement
 
 Voici le cycle complet d'une requête utilisateur :
 
@@ -55,9 +55,9 @@ Voici le cycle complet d'une requête utilisateur :
 
 •	Le front-end anime l'affichage de la carte et affiche l'analyse en mode typewriter.
 
-3. Base de données
+# 3. Base de données
 
-3.1 Structure de la table fdd_deck
+## 3.1 Structure de la table fdd_deck
 
 Colonne	Type	Rôle
 
@@ -75,7 +75,7 @@ resume_prompt	TEXT	Texte condensé transmis à l'IA pour contextualiser la carte
 
 image_url	VARCHAR(255)	Chemin relatif vers l'image de la carte (ex : images/cards/M-01.webp)
 
-3.2 Composition du deck (59 cartes)
+## 3.2 Composition du deck (59 cartes)
 
 Type	Nb cartes	Codes	Rôle
 
@@ -89,9 +89,9 @@ SPÉCIALE	2	S-01 à S-02	Cartes à fort impact symbolique : victoire totale (L'�
 
 RELIQUE	2	R-01 à R-02	Objets de pouvoir symboliques guidant l'orientation (Le Codex, Boussole Sémiotique).
 
-4. Intégration de l'Intelligence Artificielle
+# 4. Intégration de l'Intelligence Artificielle
 
-4.1 Stratégie de prompt
+## 4.1 Stratégie de prompt
 
 Le System Prompt transmis à l'IA est construit dynamiquement à chaque requête et contient trois éléments fondamentaux :
 
@@ -101,7 +101,7 @@ Le System Prompt transmis à l'IA est construit dynamiquement à chaque requête
 
 •	Le deck complet encodé en JSON (code, nom, resume_prompt pour chaque carte), afin que l'IA puisse choisir la carte la plus pertinente de manière autonome.
 
-4.2 Les trois modes d'analyse
+## 4.2 Les trois modes d'analyse
 
 ❤️ PSYCHÉ (défaut)	Profileur comportemental — focus sur les motivations profondes de la situation.
 
@@ -109,7 +109,7 @@ Le System Prompt transmis à l'IA est construit dynamiquement à chaque requête
 
 🔮 GLITCH	Analyste de données quantique — focus sur les anomalies et glitchs de réalité.
 
-4.3 Format de réponse attendu
+## 4.3 Format de réponse attendu
 
 L'IA doit retourner un objet JSON strict avec quatre champs :
 
@@ -121,7 +121,7 @@ L'IA doit retourner un objet JSON strict avec quatre champs :
 
 •	conseil : action impérative à suivre — recommandation tactique concrète.
 
-4.4 Système de fallback multi-modèles
+## 4.4 Système de fallback multi-modèles
 
 En cas d'échec d'un modèle (timeout, erreur de parsing, réponse invalide), oracle.php tente automatiquement le modèle suivant dans la liste :
 
