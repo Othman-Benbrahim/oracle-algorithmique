@@ -131,13 +131,13 @@ En cas d'échec d'un modèle (timeout, erreur de parsing, réponse invalide), or
 
 •	3e essai : google/gemini-1.5-flash
 
-5. Interface utilisateur
+# 5. Interface utilisateur
 
-5.1 Esthétique et ambiance
+## 5.1 Esthétique et ambiance
 
 L'interface adopte une esthétique cyberpunk/terminal : fond quasi-noir (#050505), typographie monospace (Courier New), couleurs néon (bleu électrique #00f3ff et violet #bc13fe), effet de scanlines CSS couvrant l'ensemble de la page. L'ensemble évoque un terminal de renseignement ou un écran d'opérations.
 
-5.2 Composants de l'interface
+## 5.2 Composants de l'interface
 
 •	Affichage de la carte : image 300×500px avec animation de retournement (effet edge-on en CSS + scaleX) et tremblement pendant le chargement.
 
@@ -151,7 +151,7 @@ L'interface adopte une esthétique cyberpunk/terminal : fond quasi-noir (#050505
 
 •	Effets sonores : deux fichiers audio (click.mp3, reveal.mp3) déclenchés aux moments clés de l'interaction.
 
-6 Glossaire
+# 6 Glossaire
 
 Méthode Prunckun	Framework d'analyse du renseignement développé par Hank Prunckun, utilisé ici comme référence conceptuelle pour structurer l'oracle.
 
